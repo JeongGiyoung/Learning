@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 이 문서는 jquery를 사용할수 있다->생산성이 높아진다 -->
+    <!-- js가 문서(html) 외부에 존재한다. 참조하는 방법 -->
+    <!--
+        - js가 html에 포함되는 방식
+        - 1. external
+        - 2. internal
+        - 3. inline
+    -->
+    <!-- <script type="text/javascript" 
+        src="https://ajax.googleapis.com/ajax/"></script> -->
+    <script>
+        // 문서가 로드 되었다(화면에 뭔가 보인다) 이벤트가 발생하면
+        // 작업 ~ 진행
+        // 1. 조작 혹은 이벤트 처리 할 요소를 찾는다(css selector)
+        // 2. 처리해라(이벤트) ex) ajax, form 전송, 화면조작,...
+    </script>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <textarea cols="20" rows="20" id="ori_text">
+                The Yankee was one of America's first cultural publications and a precursor to the independent American press that formed decades later. Founded and edited by John Neal (pictured), it was published in Portland, Maine, between 1828 and 1829. The magazine helped establish the American gymnastics movement, covered national politics, and critiqued American literature, art, theater, and social issues. Many new, predominantly female, writers and editors started their careers with publication and coverage in The Yankee, including many who are familiar to modern readers. Essays by Neal on American art and theater anticipated major changes and movements realized in the following decades. His articles on women's rights and early feminist ideas affirmed intellectual equality between men and women and demanded political and economic rights for women, saying "If woman would act with woman, there would be a stop to our tyranny".
+            </textarea>
+            <textarea cols="20" rows="20"></textarea>
+            <button type="button" 
+                onclick="javascript:lang_detect();">언어감지 요청</button>
+            <script>
+                // 조작하고 싶은 요소 바로 밑에서 처리
+            </script>
+        </fieldset>
+    </div>
+    <script>
+        // 여기서 화면을 조작하면 아무 문제 없다
+        // DOM을 조작해서 원하는 작업을 수행하면 된다
+        function lang_detect()
+        {
+            // 로그출력
+            console.log('lang_detect() call')
+            // 왼쪽 textarea 내부에 작성된 말뭉치를 서버로 보낸다
+            // 왼쪽 textarea를 찾는다 -> css selector or xpath
+            // 1. 순수 html5를 이용
+            // var, let(변수), const(상수)
+            // let target = document.querySelector('#ori_text')
+            // console.log( target )
+            
+            // 2. js 프레임웍(써드 파드, jQuery) 적용하여 사용
+            // $('css selector') == document.querySelector('css selector')
+            
+            // <input, <select, <textarea -> 값추출 -> val()
+            // 사용자가 입력한 내용을 추출
+            let target = $('#ori_text').val()
+            console.log( target )
+            
+            // ajax를 통해서 서버측으로 내용을 전송한다
+            // 웹은 무슨 프로토콜 기반으로 통신 => http, https
+            // OSI 7 layer 기반내에 존재하는 프로토콜이다
+            /*
+                클라이언트가 서버로 데이터를 보내는 방식을 메소드라함
+                그중 GET방식은 http 헤더릃 통해서 보내고, 
+                그 내용은 노출된다(주소창에)
+                -> 노출되도 상관없는 정보, 소량의 데이터
+                -> 일반 홈페이지(naver.com)
+
+                <-> POST : 보안에 우수, 대용량 전송 가능(파일업로드)
+            */
+           // 말뭉치는 크기가 다양하지만 대부분 소량은 아니므로, 
+           // post로 안전하게 처리하겠다
+
+           // jQuery, ajax, post 통신
+           $.post({
+               url:'/lang_detect',    // 데이터를 받는 서버측 주소
+               data:'ori_src='+target,// 키=값 형태로 세팅
+               dataType:'json',       // 응답 데이터를 json 처리
+                                    // flask에서는 딕셔너리형태로전송
+               success:(res)=>{
+                    // 통신이 성공하면 응답값이 res 타고 들어온다
+                    console.log( '성공', res ) 
+               },
+               error:(err)=>{
+                    // 통신이 실패하면 응답값이 err 타고 들어온다
+                    console.log( '실패', err ) 
+               },
+           })
+
+
+            // 화면의 껌벅임이 없이 처리한다(ajax 사용)
+            // 서버측 주소는 ~/lang_detect
+            // 응답 결과를 받는다.(en, fr, id, tl 등 값이 전달)
+        }
+    </script>
+</body>
+</html>
