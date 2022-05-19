@@ -1,6 +1,6 @@
-# Learning
+[Learning]
 
-## 공부 목록
+# 공부 목록
   * SQL
   * R
   * Python
