@@ -1,0 +1,791 @@
+# studyPythonByAnaconda
+
+# Day1 파일은 여기에 있는 파일이 있어야 정상 작동
+  * C:\Users\admin\busan\1day\data
+
+# [2day_판다스_01_데이터구조]
+
+### = pd.Series( , index = )
+시리즈 데이터 만들기
+
+### = { 'key' : value ... }
+딕셔너리 만들기
+
+### = pd.DataFrame()
+데이터프레임으로 만들기
+
+### 변수.dtypes
+각 열의 데이터 타입 확인
+
+### # 비어있는 데이터프레임 만들기
+df_null = pd.DataFrame()
+
+### # 컬럼(변수) 만들기
+df_null[" "] = " "
+
+# [2day_02_데이터프레임_조작]
+
+### # 필요한 라이브러리 장착
+
+import pandas as pd
+
+import matplotlib as mpl
+
+import matplotlib.pylab as plt
+
+import seaborn as sns
+
+### # 행의 위치를 찾을 때 쓸 라이브러리
+
+import numpy as np
+
+### # seaborn 안에 있는 내장 데이터 가지고 오기
+  * 'tips' : 손님들의 유형별 팁을 얼마나 주는가?
+
+tips = sns.load_dataset("tips")
+
+#### # 데이터 구조  확인
+
+tips.info()
+#### 데이터 형태 확인 가능
+  * rangeIndex 와  Non-Null Count 의 값을 비교하여 결측치 확인 가능
+
+#### # 가장 상위, 하위 조회
+tips.head()
+tips.tail()
+
+#### # 데이터프레임 행 조회 방법 2가지
+### 1. 컬럼명(변수명)으로 조회 
+tips ["sex"]
+### # 데이터 프레임 형태로 조회
+tips[["sex"]]
+
+tips ["sex"][0]
+
+tips[["sex", "tip"]]
+
+### 2. numpy의 loc와 iloc 사용
+* 차이점을 확인하기 위해 특정 행 하나 삭제
+
+tips_del = tips.drop([2])
+
+### # 행의 위치(순서)로 변수의 데이터 출력
+
+tips_del.iloc[2]
+
+### # 인위적으로 부여된 index번호를 이용
+
+tips_del.loc[3]
+
+tips.loc[[1,3,5]]
+
+tips.iloc[-1]
+
+tips.iloc[0:3]
+
+### # 행 순서로 출력
+
+[0:3] 의 의미
+  * 0에서 시작해서 3-0 = 3
+  * 즉, 3개를 불러오겠다.
+
+tips.loc[0:3]
+
+### # loc를 이용해 여러 컬럼을 조회
+
+tips.loc[0:3, ['sex', 'day']]
+
+### [문제]
+행의 위치 3~5의 행과
+
+컬럼은 첫번째 ~ 두번째 컬럼의 데이터 조회
+
+tips.iloc[3:6, 0:2]
+
+#### # 컬럼을 전부 조회
+tips.iloc[1:3, :]
+
+### # 행을 전부 조회
+tips.iloc[ : , 1:3]
+
+### # 조건식의 조회 형태
+tips.tip > 5
+
+### # 조건식을 묶는 방법
+
+tips[tips.tip > 5]
+
+tips[tips["tip"] > 5]
+
+### [문제]
+sex 값이 Male 이고 smoker 값이 No인 데이터 조회
+
+tips[(tips["sex"] == 'Male') & (tips["smoker"] == 'No')]
+
+### # 특정 값을 조회
+tips["day"].isin(["Sun"])
+
+### # 컬럼 추가
+tips["total"] = 0
+
+### [문제]
+total = total_bill + tip
+
+위 계산 공식으로 total 의 각 행을 계산해서 넣기
+
+tips["total"] = tips["total_bill"] + tips["tip"]
+
+### # tips의 각 컬럼별 데이터들의 type 조회
+tips.dtypes
+
+### # tips에서 total_bill 컬럼의 type 조회
+type(tips.total_bill)
+
+### # 데이터 타입 변환
+tips["smoker_str"] = tips["smoker"].astype(str)
+
+### # 데이터 개수 확인
+tips.count()
+tips.tip.count()
+tips["tip"].count()
+len(tips)
+
+### # 변수의 인덱스 구성 확인
+tips.index
+
+### # 변수의 컬럼 구성 확인
+tips.columns
+
+### # 데이터프레임 형태의 변수를 / 튜플 형태로 보고자 할 때
+tips.values
+
+### # 정렬
+
+  * 행단위 정렬 : axis = 0
+  * 컬럼단위 정렬 : axis = 1
+  * True = 오름차순
+  * False = 내림차순
+
+tips.sort_values(by = ['total_bill'], axis = 0, ascending = False)
+
+### # 행단위로 컬럼의 값들을 합하기
+
+tips.sum(axis = 1)
+
+### # 컬럼단위로 합하기
+
+tips.sum(axis=0)
+
+## [데이터 합하기]
+
+pd.concat([s1, s2], axis = 0)
+
+### # 시리즈 데이터 컬럼 단위 합하기
+
+pd.concat([df_temp1, df_temp2], axis = 1)
+
+### [문제]
+* 컬럼 단위로 옆으로 추가
+* 단, 고객번호가 같은 값들만
+
+pd.merge(df_info1, df_info2,
+         how ="inner")
+
+* 컬럼 단위로 옆으로 추가
+* 단, 고객번호가 없더라도 합치기
+
+pd.merge(df_info1, df_info2, how = "outer")
+
+### # 왼쪽 변수 기준 합치기
+pd.merge(df_info1, df_info2 , how = "left")
+
+### # 오른쪽 변수 기준 합치기
+pd.merge(df_info1, df_info2 , how = "right")
+-----------------------------------------
+# 3day_01_빈도_교차분석
+
+### # 기본 라이브러리 장착
+
+
+```python
+import pandas as pd
+
+import matplotlib as mpl
+
+import matplotlib.pylab as plt
+
+import seaborn as sns # seaborn 라이브러리는 matplotlib 라이브러리랑 연동되어 있어서 함께 장착
+
+import numpy as np # loc 함수 사용시 필요
+```
+
+### # tips 데이터셋 읽어들이기
+
+```python
+tips = sns.load_dataset("tips")
+
+tips
+```
+
+### # 성별를 데이터 프레임 형태로 출력
+
+```python
+tips[["sex"]]
+```
+
+### 성별 데이터를 여러 정보를 포함해서 출력
+
+```python
+tips.sex
+```
+
+### # 하나의 컬럼 안에 있는 각 값들의 빈도 조회
+
+```python
+print(tips["sex"].value_counts())
+
+print(tips["day"].value_counts())
+
+print(tips["smoker"].value_counts())
+
+print(tips["time"].value_counts())
+```
+
+### # 월별/성별 교차분석
+
+```python
+pd.crosstab(tips["sex"], tips["day"])
+```
+
+### # 성별/월별 교차분석 총괄표
+  * 행렬별 합계
+
+```python
+pd.crosstab(tips["sex"],
+            tips["day"],
+            margins = True)
+```
+
+### # 빈도 비율 확인
+
+```python
+pd.crosstab(tips["sex"],
+            tips["day"]).apply(lambda r : r/len(tips), axis = 1)
+```
+
+### # 컬럼별 데이터 타입 확인
+  * category라는 타입이 나오면 범주형 데이터로 분석할 수 있다.
+
+```python
+tips.dtypes
+```
+
+### # 기초 통계 조회
+
+```python
+tips.describe()
+```
+
+### # 행별로 결측치 확인
+
+```python
+tips.isnull().sum(1)
+```
+
+### # 열별로 결측치 확인
+
+```python
+tips.isnull().sum(0)
+```
+
+### # 행 단위로 결측치 삭제 
+
+```python
+tips.dropna(axis = 0)
+```
+
+### # 열 단위로 결측치 삭제 
+
+```python
+tips.dropna(axis = 1)
+```
+
+### # 데이터프레임 형태로 결측치 제거
+
+```python
+tips.dropna()
+```
+### # 결측치를 0으로 채우기
+
+```python
+tips.fillna(0)
+```
+
+### # 결측치를 문자열로 대체
+
+
+```python
+tips.fillna(' ')
+```
+
+### # 결측치를 평균값으로 대체
+  * 범주형 데이터는 비율을 확인해서 비율대로 데이터값을 채운다.
+
+```python
+tips.fillna(tips.mean())
+```
+
+----------------------------------------
+# 3day_02_결측치_처리
+
+# 결측치 처리하기
+
+### # 필요한 라이브러리 장착
+
+
+```python
+import pandas as pd
+import numpy as np
+```
+
+### # bicycle.csv 파일 읽어 오기
+
+
+```python
+# 파일 경로 지정
+file_path = "./data/bicycle.csv"
+
+# 파일을 읽어 들여서 DataFrame 형태로 읽어드리기
+df= pd.read_csv(file_path)
+```
+
+### # 오류 중 맨 마지막 줄에 utf-8 오류가 나올 때
+  * 메모장 - 다른이름으로 저장 - 인코딩 - utf-8로 저장
+  
+  혹은
+  
+  * df= pd.read_csv(file_path, encoding = "euc-kr")
+    - "euc-kr"은 한국에서만 통용되는 인코딩
+
+### # 결측치 확인
+
+```python
+df.isnull()
+```
+
+### # 컬럼별 결측값이 있는 행의 개수 조회
+
+```python
+df.isnull().sum(0)
+```
+
+### # 행별 결측값이 있는 컬럼의 개수 조회
+
+```python
+df.isnull().sum(1)
+```
+
+### # 결측치가 아닌 행, 열 값 개수 조회
+
+```python
+print(df.notnull().sum(1))
+print(df.notnull().sum(0))
+```
+
+### # 결측치가 있는 모든 행 삭제
+
+```python
+df_drop_allrow = df.dropna(axis=0)
+df_drop_allrow
+```
+
+### # 결측치가 있는 컬럼들 행단위로 제거
+
+```python
+df_drop_allcolum = df.dropna(axis = 1)
+df_drop_allcolum.head()
+```
+    
+
+### # 특정 컬럼에 있는 결측치 행들 컬럼 단위로 삭제
+
+
+```python
+df1 = df["대여거치대"].dropna(axis = 0)
+```
+
+
+```python
+df1.isnull().sum(0)
+```
+
+### # 여러개 컬럼을 기준으로 삭제
+
+
+```python
+df1 = df[["대여소번호",
+          "대여거치대",
+          "이용시간"]].dropna(axis =0)
+```
+
+
+```python
+df1.isnull().sum(0)
+```
+
+### # 결측치를 모두 0으로 변환
+
+
+```python
+df.fillna(0)
+```
+### # '이용거리' 컬럼에 있는 결측치를 모두 0으로 변환
+
+
+```python
+df1 = df["이용거리"].fillna(0)
+```
+
+### # 이용거리 컬럼에 있는 결측치를 모두 "missing"으로 수정
+
+
+```python
+df["이용거리"].fillna("missing")
+```
+
+
+### # 결측치 전체를 평균값으로 대체
+
+```python
+df.fillna(df.mean())
+```
+
+
+### # 이용거리 컬럼에 결측치를 평균값으로 대체
+
+
+```python
+df["이용거리"].fillna(df["이용거리"].mean())
+```
+
+--------------------------------------------
+# 4day_01_이상치_처리
+
+# 이상치 처리하기
+
+
+```python
+import pandas as pd
+import numpy as np
+```
+
+### # 사용할 데이터 불러오기
+
+
+```python
+# 파일 경로 지정
+file_path = "./data/bicycle_out.csv"
+
+# 파일을 읽어 들여서 DataFrame 형태로 읽어드리기
+df= pd.read_csv(file_path)
+```
+
+### # 결측치 있는 행 삭제와 확인
+
+
+```python
+df_drop_allrow = df.dropna(axis = 0)
+
+print(df_drop_allrow)
+
+df_drop_allrow.isnull().sum(0)
+```
+
+### # 인덱스 번호 재배열
+  * 데이터 제거할 때 함께 사라진 인덱스 번호를 다시 부여하려고 할 때
+  * drop = True
+    - 기존 index 컬럼 삭제
+
+
+```python
+df_drop_allrow = df_drop_allrow.reset_index(drop=True)
+
+df_drop_allrow
+```
+
+### # 이상치 그림으로 확인
+
+
+```python
+import matplotlib as mpl
+import matplotlib.pylab as plt
+```
+
+### # 박스플롯 그리기
+
+
+```python
+plt.boxplot(df_drop_allrow["나이"])
+plt.show()
+```
+
+### # boxplot에서 max 값과 describe(기초통계 함수)에서 max 값의 차이점
+  * boxplot()에서 max 값은 75%값에 중앙값의 1.5배를 더한 값
+  * describe()에서 max 값은 값들 중에 실제 가장 높은 수
+
+```python
+df_drop_allrow["나이"].describe()
+```
+
+### # 나이가 100살을 초과하는 데이터 조회
+
+```python
+df_drop_allrow[df_drop_allrow["나이"] > 100 ]
+```
+
+### # 나이가 10살 이하의 데이터 조회
+
+```python
+df_drop_allrow[df_drop_allrow["나이"] <= 10 ]
+```
+
+### # 나이가 100살을 초과하거나 10살 이하인 데이터 조회
+
+
+```python
+df_drop_allrow[(df_drop_allrow["나이"] > 100) | (df_drop_allrow["나이"] <= 10)]
+```
+
+## [최대값/최소값 계산하여 이상치 제거]
+
+### # q1(25%), q3(75%) 확인
+
+
+```python
+np.percentile(df_drop_allrow["나이"], [25, 75])
+```
+
+### # 여러 값을 return 받기
+
+```python
+q1, q3 = np.percentile(df_drop_allrow["나이"], [25, 75])
+```
+
+###  # iqr(interquartile, 중간값) 구하기
+
+```python
+iqr = q3 - q1
+
+iqr
+```
+### # 최대값 = q3 + (iqr * 1.5)
+
+```python
+upper_bound = q3 + (iqr * 1.5)
+
+upper_bound
+```
+
+### # 최소값 = q1 - (iqr * 1.5)
+
+```python
+lower_bound = q1 - (iqr * 1.5)
+
+lower_bound
+```
+
+### # 이상치 데이터 찾아보기
+
+```python
+df_drop_allrow[(df_drop_allrow["나이"] > upper_bound) | (df_drop_allrow["나이"] < lower_bound)]
+```
+
+### # 이상치를 찾는 함수로 만들기('나이'컬럼 기준만)
+  * 매개변수가 없이
+
+
+```python
+def outliers_iqr() : 
+    q1, q3 = np.percentile(df_drop_allrow["나이"], [25, 75])    
+    print(q1)
+    print(q3)
+    
+    iqr = q3 - q1    
+    print(iqr)
+    
+    upper_bound = q3 + (iqr * 1.5)
+    print(upper_bound)
+    
+    lower_bound = q1 - (iqr * 1.5)
+    print(lower_bound)
+    
+    df_temp = df_drop_allrow[(df_drop_allrow["나이"] > upper_bound) | (df_drop_allrow["나이"] < lower_bound)]
+    print(len(df_temp))
+    print(df_temp)
+
+outliers_iqr()
+```
+
+### # 매개변수가 있는 함수 만들기
+  * 데이터를 넘겨주는 대로 이상치 값을 출력
+
+
+```python
+def outliers_iqr2(data) : 
+    q1, q3 = np.percentile(data, [25, 75])    
+    print(q1)
+    print(q3)
+    
+    iqr = q3 - q1    
+    print(iqr)
+    
+    upper_bound = q3 + (iqr * 1.5)
+    print(upper_bound)
+    
+    lower_bound = q1 - (iqr * 1.5)
+    print(lower_bound)
+    
+    df_temp = df_drop_allrow[(data > upper_bound) | (data < lower_bound)]
+    print(len(df_temp))
+    print(df_temp)
+
+outliers_iqr2(df_drop_allrow["나이"])
+```
+
+### # 매개변수가 두 개인 함수
+
+
+```python
+def outliers_iqr3(dframe, data) : 
+    q1, q3 = np.percentile(data, [25, 75])    
+    print(q1)
+    print(q3)
+    
+    iqr = q3 - q1    
+    print(iqr)
+    
+    upper_bound = q3 + (iqr * 1.5)
+    print(upper_bound)
+    
+    lower_bound = q1 - (iqr * 1.5)
+    print(lower_bound)
+    
+    df_temp = dframe[(data > upper_bound) | (data < lower_bound)]
+    print(len(df_temp))
+    print(df_temp)
+
+outliers_iqr3(df_drop_allrow, df_drop_allrow["나이"])
+```
+
+### # 만든 함수 모듈로 만들기
+  * 정의된 함수 문장만 따로 .py 파이썬 확장자로 만들기
+  * 작업하고 있는 문서가 있는 폴더로 이동
+
+```python
+outliers.outliers_iqr3(df_drop_allrow, df_drop_allrow["나이"])
+```
+
+```python
+((df_drop_allrow["나이"] > 61.5) | (df_drop_allrow["나이"] < 1.5))
+```
+
+### # 행 번호만 조회
+
+
+```python
+np.where((df_drop_allrow["나이"] > 61.5) | (df_drop_allrow["나이"] < 1.5))
+```
+
+### # 이상치가 있는 데이터 index 번호만 조회
+
+
+```python
+def get_outliers_data(data) : 
+    q1, q3 = np.percentile(data, [25, 75])    
+    print(q1)
+    print(q3)
+    
+    iqr = q3 - q1    
+    print(iqr)
+    
+    upper_bound = q3 + (iqr * 1.5)
+    print(upper_bound)
+    
+    lower_bound = q1 - (iqr * 1.5)
+    print(lower_bound)
+    
+    '''
+    df_temp = dframe[(data > upper_bound) | (data < lower_bound)]
+    print(len(df_temp))
+    print(df_temp)
+    '''
+    
+    return np.where((data > 61.5) | (data < 1.5))
+```
+
+
+```python
+get_outliers_data(df_drop_allrow["나이"])
+```
+
+### # 이상치가 있는 데이터를 행번호로 찾아서 전체 데이터프레임 출력
+
+```python
+df_drop_allrow.loc[get_outliers_data(df_drop_allrow["나이"])]
+```
+
+
+
+### # 이상치 제거하기
+  * 이상치 아닌 값만 추출해서 따로 저장
+
+#### # for 문 돌리기 전 작업
+
+```python
+age_oulier_index = get_outliers_data(df_drop_allrow["나이"])
+```
+
+```python
+df_drop_allrow.loc[age_oulier_index]
+```
+
+```python
+age_oulier_index.index
+```
+
+```python
+age_oulier_index
+```
+
+```python
+df_drop_allrow.index
+```
+
+#### * for문 돌리기
+
+```python
+age_non_outlier_index = []
+
+for idx in df_drop_allrow.index : 
+    
+    if idx not in age_oulier_index[0] : # age_oulier_index를 출력해보면 0번째 인덱스에 값들이 모여 있다. 1번째 인덱스에는 dtype=int64 이 있다.
+        age_non_outlier_index.append(idx)
+        
+age_non_outlier_index
+```
+
+### # 정상 데이터만 행번호로 조회
+
+
+```python
+df_new = df_drop_allrow.loc[age_non_outlier_index]
+```
+
+### # 인덱스 번호 재배열하고 변수에 저장하고 조회
+
+
+```python
+df_new = df_new.reset_index(drop=True)
+
+df_new
+```

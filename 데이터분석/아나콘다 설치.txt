@@ -1,0 +1,27 @@
+[아나콘다 설치]
+
+# PC 이름은 영어이름으로 설정
+
+# 기존 파이썬 프로그램 삭제
+  * 런쳐도 삭제
+  * ananconda에 파이썬이 같이 설치되기 때문
+
+# 아나콘다 설치
+  * add anacoda3 to my PATH enviroment variable 체크
+    - PC 어느 환경에서도 이 anaconda를 사용하겠다는 뜻
+---
+[설치 후]
+# anaconda navigator 
+  * 가상환경 관리 등
+
+# (주로 이걸로 사용) jupyter notebook 관리자권한으로 실행
+  * cmd 창이 열려 있는 상태에서 웹페이지 작업이 가능
+  * 가끔 token이 없다고 하면 cmd창에 token이 포함된 주소줄을 복사하면 됨.
+
+# anaconda prompt 로 열었을 때
+  * C:\Users:\admin 으로 설정해주고 
+    - cd .. 
+    - dir/w
+    - cd Users
+    - cd admin
+  * jupyter notebook 
