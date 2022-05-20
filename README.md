@@ -4,6 +4,11 @@
   * SQL
   * R
   * Python
+    - 
+    |:--|--:|
+    |:--|--:|
+    |:--|--:|
+
   * Flask
   * Crawling
   * ML(Machine Learning)
