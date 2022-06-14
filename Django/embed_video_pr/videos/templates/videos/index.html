@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load embed_video_tags %}
+
+{% block content %}
+    <h1 class = "mb-5">Detected Video</h1>
+
+    <div class = "d-flex flex-wrap">
+        {% for item in videos %}
+
+            <div class ="px-3 mb-5">
+                {% video item.url '425x240' %}
+
+                <div class="d-flex justify-content-start">
+                    {{ item.title }}
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}
