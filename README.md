@@ -59,5 +59,5 @@
     |2022-06-08(수)|Flask로 웹크롤링(오늘의유머) 공부|:--:|:--:|
     |2022-06-08(수)|네이버 쇼핑몰, 다음 키워드 검색|:--:|:--:|
     |2022-06-09(목)|네이버 쇼핑몰 검색 결과 3개 출력(상품명, 이미지)|:--:|:--:|
-    |2022-06-09(목)|Flask-Web-Framework(Flask로 웹캠 출력하기)|출처 : https://github.com/krishnaik06/Flask-Web-Framework|:--:|
-    |2022-06-14(화)|Flask로 youtube 검색 결과 출력|https://github.com/Jagadish077/YouTube-Data-Api-with-python-flask|:--:|
+    |2022-06-09(목)|Flask-Web-Framework(Flask로 웹캠 출력하기)|:--:|출처 : https://github.com/krishnaik06/Flask-Web-Framework|
+    |2022-06-14(화)|Flask로 youtube 검색 결과 출력|:--:|https://github.com/Jagadish077/YouTube-Data-Api-with-python-flask|
