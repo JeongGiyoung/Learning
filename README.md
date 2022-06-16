@@ -63,5 +63,5 @@
     |2022-06-09(목)|네이버 쇼핑몰 검색 결과 3개 출력(상품명, 이미지)|:--:|:--:|
     |2022-06-09(목)|Flask-Web-Framework(Flask로 웹캠 출력하기)|:--:|출처 : https://github.com/krishnaik06/Flask-Web-Framework|
     |2022-06-14(화)|Flask로 youtube 검색 결과 출력|:--:|https://github.com/Jagadish077/YouTube-Data-Api-with-python-flask|
-    |2022-06-16(목)|Flask로 yolov5|:--:|https://github.com/robmarkcole/yolov5-flask|
+    |2022-06-16(목)|Flask로 yolov5(이미지)|:--:|https://github.com/robmarkcole/yolov5-flask|
     |2022-06-16(목)|Flask로 yolov5를 webcam(iriun webcame) 연결|:--:|https://github.com/ngzhili/Yolov5-Real-Time-Object-Detection|
