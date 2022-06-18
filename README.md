@@ -16,13 +16,8 @@
     |날짜|제목|내용1|내용2|
     |:--:|:--:|:--:|:--:|
     |2022-05-20(금)|기초 함수|수정|:--:|
-  * Flask
-
-  * Crawling
-    |날짜|제목|내용1|내용2|
-    |:--:|:--:|:--:|:--:|
-    |2022-05-24(화)|유튜브 댓글 크롤링.ipynb|:--:|:--:|
-    |2022-05-25(수)|test_유튜브 자막 추출.ipynb|:--:|:--:|
+    |2022-06-15(수)|opencv_preprocessing.ipynb|OpenCV로 전처리 |https://yunwoong.tistory.com/50|
+    |2022-06-17(금)|opencv_cv2_VideoCapture.ipynb|OpenCV로 영상 및 youtbue 재생 |https://velog.io/@bangsy/Python-OpenCV3|
 
   * ML(Machine Learning)
     |날짜|제목|내용1|내용2|
@@ -44,9 +39,8 @@
     |2022-06-09(목)|YOLOv5로 웹캠으로 detect|:--:|:--:|
     |2022-06-14(화)|pytesseract.ipynb|OpenCV + tesseract 로 OCR(문자 판독) |https://youtu.be/uC__A7erKPU|
     |2022-06-14(화)|자동차 번호판 인식기.ipynb|OpenCV + tesseract 로 자동차 번호판 판독 |https://youtu.be/PpTl7xxGXh4|
-    |2022-06-15(수)|opencv_preprocessing.ipynb|OpenCV로 전처리 |https://yunwoong.tistory.com/50|
+    |2022-06-18(토)|easyocr test.ipynb| tesseract보다 인식률 높은 ocr 라이브러리 |https://github.com/JaidedAI/EasyOCR/tree/master/easyocr|
     
-
   * Django
     |날짜|제목|내용1|내용2|
     |:--:|:--:|:--:|:--:|
@@ -64,4 +58,10 @@
     |2022-06-09(목)|Flask-Web-Framework(Flask로 웹캠 출력하기)|:--:|출처 : https://github.com/krishnaik06/Flask-Web-Framework|
     |2022-06-14(화)|Flask로 youtube 검색 결과 출력|:--:|https://github.com/Jagadish077/YouTube-Data-Api-with-python-flask|
     |2022-06-16(목)|Flask로 yolov5(이미지)|:--:|https://github.com/robmarkcole/yolov5-flask|
-    |2022-06-16(목)|Flask로 yolov5를 webcam(iriun webcame) 연결|:--:|https://github.com/ngzhili/Yolov5-Real-Time-Object-Detection|
+    |2022-06-16(목)|Flask로 yolov5(iriun webcam) 연결|:--:|https://github.com/ngzhili/Yolov5-Real-Time-Object-Detection|
+
+  * Crawling
+    |날짜|제목|내용1|내용2|
+    |:--:|:--:|:--:|:--:|
+    |2022-05-24(화)|유튜브 댓글 크롤링.ipynb|:--:|:--:|
+    |2022-05-25(수)|test_유튜브 자막 추출.ipynb|:--:|:--:|
