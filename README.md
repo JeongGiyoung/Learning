@@ -29,14 +29,25 @@
 
   * DL(Deep Learning)
     |날짜|제목|내용1|내용2|
-    |:--:|:--:|:--:|:--:|
-    |2022-05-25(수)|3-4. 영화 리뷰 분류.ipynb|:--:|:--:|
-    |2022-05-25(수)|3-5. 뉴스 기사 분류.ipynb|:--:|:--:|
-    |2022-05-25(수)|3_5_(실습)뉴스_기사_분류.ipynb|:--:|:--:|
+    |object dectection|:--:|:--:|:--:|
     |2022-05-31(화)|yolov5_mask_dataset.ipynb|:--:|:--:|
     |2022-05-31(화)|YOLOv5_chicken.ipynb|:--:|:--:|
     |2022-05-31(화)|YOLOv5_various test.ipynb|:--:|:--:|
     |2022-06-09(목)|YOLOv5로 웹캠으로 detect|:--:|:--:|
+    
+    - NLP(Natural Language Processing)
+    |날짜|제목|내용1|내용2|
+    |NLP|:--:|:--:|:--:|
+    |2022-05-25(수)|3-4. 영화 리뷰 분류.ipynb|:--:|:--:|
+    |2022-05-25(수)|3-5. 뉴스 기사 분류.ipynb|:--:|:--:|
+    |2022-05-25(수)|3_5_(실습)뉴스_기사_분류.ipynb|:--:|:--:|
+    |2022-06-21(Tue)|(clone)Naver Shopping Review Sentiment Analysis(by colab for gpu training).ipynb|:--:|https://wikidocs.net/94600|
+    |2022-06-21(Tue)|(clone)Naver Shopping Review Sentiment Analysis(on local for prediction).ipynb|:--:|https://wikidocs.net/94600|
+    |2022-06-21(Tue)|(clone)crawling_navershopping_review.ipynb|:--:|https://velog.io/@kjh1337/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%87%BC%ED%95%91%EB%AA%B0-%EB%A6%AC%EB%B7%B0-%ED%81%AC%EB%A1%A4%EB%A7%81|
+
+    - OCR(Optical character recognition)
+    |날짜|제목|내용1|내용2|
+    |OCR|:--:|:--:|:--:|
     |2022-06-14(화)|pytesseract.ipynb|OpenCV + tesseract 로 OCR(문자 판독) |https://youtu.be/uC__A7erKPU|
     |2022-06-14(화)|자동차 번호판 인식기.ipynb|OpenCV + tesseract 로 자동차 번호판 판독 |https://youtu.be/PpTl7xxGXh4|
     |2022-06-18(토)|easyocr test.ipynb| tesseract보다 인식률 높은 ocr 라이브러리 |https://github.com/JaidedAI/EasyOCR/tree/master/easyocr|
@@ -61,7 +72,8 @@
     |2022-06-16(목)|Flask로 yolov5(iriun webcam) 연결|:--:|https://github.com/ngzhili/Yolov5-Real-Time-Object-Detection|
 
   * Crawling
-    |날짜|제목|내용1|내용2|
+    |Date|Title|Detail|source|
     |:--:|:--:|:--:|:--:|
     |2022-05-24(화)|유튜브 댓글 크롤링.ipynb|:--:|:--:|
     |2022-05-25(수)|test_유튜브 자막 추출.ipynb|:--:|:--:|
+    
