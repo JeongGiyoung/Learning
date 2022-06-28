@@ -51,6 +51,7 @@
     |2022-06-14(화)|pytesseract.ipynb|OpenCV + tesseract 로 OCR(문자 판독) |https://youtu.be/uC__A7erKPU|
     |2022-06-14(화)|자동차 번호판 인식기.ipynb|OpenCV + tesseract 로 자동차 번호판 판독 |https://youtu.be/PpTl7xxGXh4|
     |2022-06-18(토)|easyocr test.ipynb| tesseract보다 인식률 높은 ocr 라이브러리 |https://github.com/JaidedAI/EasyOCR/tree/master/easyocr|
+    |2022-06-28(Tue)|OCR_productLogo_innisfree(in local).ipynb|:--:|:--:|
     
   * Django
     |날짜|제목|내용1|내용2|
