@@ -28,7 +28,9 @@
     |2022-05-27(금)|9-8. Surprise.ipynb|:--:|:--:|
 
   * DL(Deep Learning)
+
     - object dectection
+
     |날짜|제목|내용1|내용2|
     |:--:|:--:|:--:|:--:|
     |2022-05-31(화)|yolov5_mask_dataset.ipynb|:--:|:--:|
@@ -37,6 +39,7 @@
     |2022-06-09(목)|YOLOv5로 웹캠으로 detect|:--:|:--:|
     
     - NLP(Natural Language Processing)
+
     |날짜|제목|내용1|내용2|
     |:--:|:--:|:--:|:--:|
     |2022-05-25(수)|3-4. 영화 리뷰 분류.ipynb|:--:|:--:|
@@ -47,6 +50,7 @@
     |2022-06-21(Tue)|(clone)crawling_navershopping_review.ipynb|:--:|https://velog.io/@kjh1337/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%87%BC%ED%95%91%EB%AA%B0-%EB%A6%AC%EB%B7%B0-%ED%81%AC%EB%A1%A4%EB%A7%81|
 
     - OCR(Optical character recognition)
+    
     |날짜|제목|내용1|내용2|
     |:--:|:--:|:--:|:--:|
     |2022-06-14(화)|pytesseract.ipynb|OpenCV + tesseract 로 OCR(문자 판독) |https://youtu.be/uC__A7erKPU|
