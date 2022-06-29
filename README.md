@@ -28,8 +28,9 @@
     |2022-05-27(금)|9-8. Surprise.ipynb|:--:|:--:|
 
   * DL(Deep Learning)
+    - object dectection
     |날짜|제목|내용1|내용2|
-    |object dectection|:--:|:--:|:--:|
+    |:--:|:--:|:--:|:--:|
     |2022-05-31(화)|yolov5_mask_dataset.ipynb|:--:|:--:|
     |2022-05-31(화)|YOLOv5_chicken.ipynb|:--:|:--:|
     |2022-05-31(화)|YOLOv5_various test.ipynb|:--:|:--:|
@@ -37,7 +38,7 @@
     
     - NLP(Natural Language Processing)
     |날짜|제목|내용1|내용2|
-    |NLP|:--:|:--:|:--:|
+    |:--:|:--:|:--:|:--:|
     |2022-05-25(수)|3-4. 영화 리뷰 분류.ipynb|:--:|:--:|
     |2022-05-25(수)|3-5. 뉴스 기사 분류.ipynb|:--:|:--:|
     |2022-05-25(수)|3_5_(실습)뉴스_기사_분류.ipynb|:--:|:--:|
@@ -47,7 +48,7 @@
 
     - OCR(Optical character recognition)
     |날짜|제목|내용1|내용2|
-    |OCR|:--:|:--:|:--:|
+    |:--:|:--:|:--:|:--:|
     |2022-06-14(화)|pytesseract.ipynb|OpenCV + tesseract 로 OCR(문자 판독) |https://youtu.be/uC__A7erKPU|
     |2022-06-14(화)|자동차 번호판 인식기.ipynb|OpenCV + tesseract 로 자동차 번호판 판독 |https://youtu.be/PpTl7xxGXh4|
     |2022-06-18(토)|easyocr test.ipynb| tesseract보다 인식률 높은 ocr 라이브러리 |https://github.com/JaidedAI/EasyOCR/tree/master/easyocr|
