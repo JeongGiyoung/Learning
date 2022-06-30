@@ -48,6 +48,10 @@
     |2022-06-21(Tue)|(clone)Naver Shopping Review Sentiment Analysis(by colab for gpu training).ipynb|:--:|https://wikidocs.net/94600|
     |2022-06-21(Tue)|(clone)Naver Shopping Review Sentiment Analysis(on local for prediction).ipynb|:--:|https://wikidocs.net/94600|
     |2022-06-21(Tue)|(clone)crawling_navershopping_review.ipynb|:--:|https://velog.io/@kjh1337/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%87%BC%ED%95%91%EB%AA%B0-%EB%A6%AC%EB%B7%B0-%ED%81%AC%EB%A1%A4%EB%A7%81|
+    |2022-06-29(Wed)|(clone)세줄요약.ipynb|:--:|https://github.com/theeluwin/textrankr|
+    |2022-06-29(Wed)|(clone)Korean KeyBERT(키워드 추출).ipynb|:--:|https://wikidocs.net/162079|
+    |2022-06-29(Wed)|유튜브 자막으로 키워드 추출.ipynb|:--:|:--:|
+    |2022-06-29(Wed)|(clone)kokex_키워드추출.ipynb|:--:|https://github.com/jsmyung-datansoft/kokex|
 
     - OCR(Optical character recognition)
     
