@@ -86,4 +86,6 @@
     |:--:|:--:|:--:|:--:|
     |2022-05-24(화)|유튜브 댓글 크롤링.ipynb|:--:|:--:|
     |2022-05-25(수)|test_유튜브 자막 추출.ipynb|:--:|:--:|
-    
+    |2022-07-27(목)|scrapping_cheapestPrice.ipynb|:--:|:--:|
+    |2022-07-27(목)|scrapping_vodanaStraightner_price,img.ipynb|:--:|:--:|
+    |2022-07-27(목)|test_naver_shopping.ipynb|:--:|:--:|
